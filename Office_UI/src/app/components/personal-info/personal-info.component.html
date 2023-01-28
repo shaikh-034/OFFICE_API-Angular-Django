@@ -1,0 +1,74 @@
+<h2>Employees Personal Info</h2>
+<form #f="ngForm" (ngSubmit)="personalInfo(f)">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" ngModel name="Name" matInput>
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>DOB</mat-label>
+        <input name="DOB" ngModel matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button type="button" mat-raised-button (click)="picker.open()">Open</button>
+<br>
+
+<mat-form-field appearance="fill">
+    <mat-label>Department</mat-label>
+    <input ngModel name="department" matInput>
+</mat-form-field>
+<br>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Martial Status</mat-label>
+    <mat-select #status>
+      <mat-option value="Married">Married</mat-option>
+      <mat-option value="UnMarried">UnMarried</mat-option>
+      <mat-option value="Divorced">Divorced</mat-option>
+      <mat-option value="Widow">Widow</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <input type="hidden" name="martial_status" [(ngModel)]="status.value" />
+
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Caste</mat-label>
+    <mat-select #caste>
+      <mat-option value="OPEN">OPEN</mat-option>
+      <mat-option value="SC">SC</mat-option>
+      <mat-option value="ST">ST</mat-option>
+      <mat-option value="OBC">OBC</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <input type="hidden" [(ngModel)]="caste.value" name="caste"/>
+<br>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <input ngModel name="City" matInput>
+</mat-form-field>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>State</mat-label>
+    <input ngModel name="state" matInput>
+</mat-form-field>
+<br>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Pincode</mat-label>
+    <input ngModel name="pincode" matInput>
+</mat-form-field>
+<br>
+<input type="hidden" ngModel name="user">
+
+
+<button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
+<!-- <button [routerLink]="['/employee']" mat-raised-button color="primary" >See Profile</button> -->

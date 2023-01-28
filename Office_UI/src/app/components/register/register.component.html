@@ -1,0 +1,24 @@
+<h2>Register</h2>
+<form #f="ngForm" (ngSubmit)="register(f)">
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" ngModel name="email" matInput>
+    </mat-form-field>
+    <br>
+    
+<mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input ngModel name="password" matInput>
+</mat-form-field>
+<br>
+
+<mat-form-field appearance="fill">
+    <mat-label>Confirm Password</mat-label>
+    <input ngModel name="password1" matInput>
+</mat-form-field>
+
+<section class="example-section">
+    <mat-checkbox name="tc" class="example-margin" ngModel="checked">Checked</mat-checkbox>
+</section>
+<button type="submit" mat-raised-button color="primary">Sign up</button>
+</form>

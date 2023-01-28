@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "66a6eb77-8410-48d7-a020-8c0844294e2f",
+		"name": "Office_Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employees Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Suhail\",\r\n    \"email\":\"su@eample.com\",\r\n    \"tc\":\"True\",\r\n    \"password\":\"541\",\r\n    \"password1\":\"54321\",\r\n    \"date_of_birth\":\"2001-1-1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/register/?Accept",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"register",
+						""
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0OTAyNTc3LCJpYXQiOjE2NzQ4ODQ1NzcsImp0aSI6IjM0MGRhMzlhMmE3MzQ1MDViMDZhYjlkOTlmYmE4YWQ5IiwidXNlcl9pZCI6MTd9.iI-CDeGbDkfkcsjt2S07Lnfl3Kh37tLg1M-FF-eNfTE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"noman@example.com\",\r\n    \"password\":\"54321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmployeeProfileView",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NzMzNTM0LCJpYXQiOjE2NzQ3MTU1MzQsImp0aSI6ImUxM2YwYTk3YTM0YTQ2MjA5YTNmYjg3ZDE1ZDQwNDQ3IiwidXNlcl9pZCI6Mn0.GHZv_P_dDIS4-LjE_xu2TquO-00uoErWYTJQz9bsM5Y",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmployeeChangePassword",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmployeePersonalInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NzMyODg2LCJpYXQiOjE2NzQ3MTQ4ODYsImp0aSI6IjNhYmUyMDUzMWU1YTQ5ZWVhMjQ5NGJkM2I5ZDQzZjcyIiwidXNlcl9pZCI6Mn0.O_WT96gsu-Gi4a97kdHByc5XZz3YKLW7O_iSbYL2xSc",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\":\"Sameer Ali\",\r\n    \"DOB\":\"2000-02-12\",\r\n    \"department\":\"Accounts\",\r\n    \"martial_status\":\"UnMarried\",\r\n    \"caste\":\"OPEN\",\r\n    \"City\":\"Mumbai\",\r\n    \"state\":\"Maharashtra\",\r\n    \"pincode\":400080\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/info/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"info",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

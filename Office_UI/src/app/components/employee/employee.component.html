@@ -1,0 +1,84 @@
+<h2>Employees Profile</h2>
+<span  *ngIf="profileInfo; then ifBlock else elseBlock">
+
+</span>
+<ng-template #ifBlock>
+    <form #data="ngForm" (ngSubmit)="update(data)">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" [(ngModel)]="profileInfo.profile.Name" name="Name" matInput>
+        </mat-form-field>
+        <br>
+    
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>DOB</mat-label>
+            <input name="DOB" [(ngModel)]="profileInfo.profile.DOB" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button type="button" mat-raised-button (click)="picker.open()">Open</button>
+        <!-- <pre>{{picker}}</pre> -->
+        <br>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Department</mat-label>
+            <input [(ngModel)]="profileInfo.profile.department" name="department" matInput>
+        </mat-form-field>
+        <br>
+    
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Martial Status</mat-label>
+            <mat-select [value]="profileInfo.profile.martial_status" #status>
+                <mat-option value="Married">Married</mat-option>
+                <mat-option value="UnMarried">UnMarried</mat-option>
+                <mat-option value="Divorced">Divorced</mat-option>
+                <mat-option value="Widow">Widow</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <input type="hidden" name="martial_status" [(ngModel)]="status.value" />
+    <br>
+    
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Caste</mat-label>
+            <mat-select [value]="profileInfo.profile.caste" #caste>
+                <mat-option value="OPEN">OPEN</mat-option>
+                <mat-option value="SC">SC</mat-option>
+                <mat-option value="ST">ST</mat-option>
+                <mat-option value="OBC">OBC</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <input type="hidden" [(ngModel)]="caste.value" name="caste" />
+        <br>
+    
+    
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input [(ngModel)]="profileInfo.profile.City" name="City" matInput>
+        </mat-form-field>
+    <br>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>State</mat-label>
+            <input [(ngModel)]="profileInfo.profile.state" name="state" matInput>
+        </mat-form-field>
+        <br>
+    
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Pincode</mat-label>
+            <input [(ngModel)]="profileInfo.profile.pincode" name="pincode" matInput>
+        </mat-form-field>
+        <input type="hidden" ngModel name="user">
+        <br>
+    
+    
+        <button type="submit" mat-raised-button color="primary">Update</button>
+        
+    </form>
+    <button type="button" (click)="delete()" mat-raised-button color="primary">Delete</button>
+</ng-template>
+<ng-template #elseBlock>
+    No data
+</ng-template>

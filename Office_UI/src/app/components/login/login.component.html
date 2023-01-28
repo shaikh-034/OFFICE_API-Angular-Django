@@ -1,0 +1,16 @@
+<h2>Log In</h2>
+<form #f="ngForm" (ngSubmit)="login(f)" >
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" ngModel name="email" matInput>
+    </mat-form-field>
+    <br>
+    
+<mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input ngModel name="password" matInput>
+</mat-form-field>
+<br>
+
+<button type="submit" mat-raised-button color="primary">Log In</button>
+</form>
